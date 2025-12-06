@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph Manager</title>
+</head>
+<body>
+
+    <!-- Button to add a paragraph -->
+    <button id="addBtn">Add Paragraph</button>
+
+    <!-- Button to remove the last paragraph -->
+    <button id="removeBtn">Remove Last Paragraph</button>
+
+    <!-- Container where paragraphs will be added -->
+    <div id="container"></div>
+
+    <script>
+        // Get the div container where paragraphs will be added
+        const container = document.getElementById("container");
+
+        // Get both buttons
+        const addBtn = document.getElementById("addBtn");
+        const removeBtn = document.getElementById("removeBtn");
+
+        // When "Add Paragraph" button is clicked
+        addBtn.onclick = function() {
+            // Create a new <p> element
+            const p = document.createElement("p");
+
+            // Add text to the paragraph
+            p.textContent = "This is a new paragraph.";
+
+            // Append the paragraph to the container div
+            container.appendChild(p);
+        }
+
+        // When "Remove Last Paragraph" button is clicked
+        removeBtn.onclick = function() {
+            // Check if the container has any child elements
+            if (container.lastChild) {
+                // Remove the last paragraph added
+                container.removeChild(container.lastChild);
+            }
+        }
+    </script>
+
+</body>
+</html>
